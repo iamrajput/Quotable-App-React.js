@@ -1,4 +1,3 @@
-import {useState,useEffect} from 'react'
 function QuoteItem({quote,index}) {
     return (
              <div className="quotes">

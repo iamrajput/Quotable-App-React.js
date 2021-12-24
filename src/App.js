@@ -2,6 +2,7 @@ import Quote from './components/Quote'
 import QuoteList from './components/QuoteList'
 import Header from  './components/Header'
 import {useState,useEffect} from 'react'
+
 function App() {
 
    const [quote,setQuote] = useState({
@@ -22,8 +23,11 @@ function App() {
     } 
     setQuote(await fetchQuotes())
    }
-   useEffect(async () => {
-    setQuote(await fetchQuotes())
+   useEffect(() => {
+       async function getData(){
+        setQuote(await fetchQuotes())
+       }
+       getData()
    },[])
 
     return (

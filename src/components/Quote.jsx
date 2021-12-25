@@ -1,4 +1,8 @@
-function Quote({quote}) {
+import {useContext} from 'react'
+import QuoteContext from '../context/QuotesContext'
+
+function Quote() {
+    const {quote} = useContext(QuoteContext)
     return (
         <div className='quote'> 
             <div className="author" title={quote.author}>{quote.author}</div>
